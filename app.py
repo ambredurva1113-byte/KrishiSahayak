@@ -171,7 +171,7 @@ else:
         factor_df.columns = ["Factor", "Value"]
         factor_df["Factor"] = factor_df["Factor"].map(factor_labels)
         factor_df["Value"] = factor_df["Value"].round(2)
-        st.dataframe(factor_df, use_container_width=True, hide_index=True, height=280)
+        st.dataframe(factor_df, width='stretch', hide_index=True, height=280)
 
     with col_right:
         st.markdown(f'<div class="section-header">{t["drivers"]}</div>', unsafe_allow_html=True)
@@ -187,7 +187,7 @@ else:
             paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
             font=dict(color="#B0B4B9"),
         )
-        st.plotly_chart(fig_prob, use_container_width=True)
+        st.plotly_chart(fig_prob, width='stretch')
 
         st.markdown(f'<div class="section-header">{t["trend_title"]}</div>', unsafe_allow_html=True)
         history = df[(df["district"] == district) & (df["crop"] == crop)].sort_values("year")
@@ -202,7 +202,7 @@ else:
             font=dict(color="#B0B4B9"),
             xaxis=dict(gridcolor="#262B36"), yaxis=dict(gridcolor="#262B36", title="Yield (kg/ha)"),
         )
-        st.plotly_chart(fig_trend, use_container_width=True)
+        st.plotly_chart(fig_trend, width='stretch')
 
 # ---------------------------------------------------------------------------
 # Regional risk map (for the selected crop, latest available year)
@@ -230,7 +230,7 @@ if not overview.empty:
         paper_bgcolor="rgba(0,0,0,0)",
         legend=dict(font=dict(color="#B0B4B9"), title=None),
     )
-    st.plotly_chart(fig_map, use_container_width=True)
+    st.plotly_chart(fig_map, width='stretch')
     st.caption(f"Showing {crop.title()} risk across districts for {latest_year_for_crop} "
                f"(most recent year with data for this crop).")
 
