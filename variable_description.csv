@@ -1,0 +1,9 @@
+Variable,Type,Description
+district,Categorical,Maharashtra district name
+year,Numeric (discrete),Agricultural year of record
+crop,Categorical,"Crop grown (e.g. Cotton, Rice, Sugarcane)"
+area_1000ha,Numeric (continuous),"Area sown, in thousand hectares"
+production_1000t,Numeric (continuous),"Total production, in thousand tonnes"
+yield_kg_per_ha,Numeric (continuous),"Yield = production / area, in kg per hectare (this is the raw basis for the target)"
+rainfall_mm,Numeric (continuous),Total seasonal rainfall in mm for that district-year
+avg_temp_c,Numeric (continuous),Average temperature in Celsius for that district-year

@@ -1,0 +1,6 @@
+variable,n_outliers,pct_outliers,lower_bound,upper_bound
+area_1000ha,1518,10.0,-88.1,147.9
+production_1000t,1828,12.05,-81.36,136.21
+yield_kg_per_ha,1148,7.56,-1223.08,2653.85
+rainfall_mm,980,7.92,-257.53,1541.72
+avg_temp_c,0,0.0,18.43,25.01
