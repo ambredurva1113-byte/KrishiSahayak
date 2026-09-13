@@ -218,14 +218,14 @@ overview["lon"] = overview["district"].map(lambda d: DISTRICT_COORDS.get(d, (Non
 overview = overview.dropna(subset=["lat", "lon"])
 
 if not overview.empty:
-    fig_map = px.scatter_mapbox(
+    fig_map = px.scatter_map(
         overview, lat="lat", lon="lon", color="predicted_risk",
         color_discrete_map=RISK_HEX, hover_name="district",
         hover_data={"lat": False, "lon": False, "predicted_risk": True},
         zoom=5.4, height=440, size=[14] * len(overview), size_max=14,
     )
     fig_map.update_layout(
-        mapbox_style="carto-darkmatter",
+        map_style="carto-darkmatter",
         margin=dict(l=0, r=0, t=0, b=0),
         paper_bgcolor="rgba(0,0,0,0)",
         legend=dict(font=dict(color="#B0B4B9"), title=None),
