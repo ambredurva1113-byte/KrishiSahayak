@@ -63,16 +63,41 @@ streamlit run app.py
 
 ## Folder Structure
 ```
-KrishiSahayak/
-├── raw_final_crop.csv          ← real source dataset
-├── krishisahayak_dataset.csv   ← cleaned model-ready data
-├── 01_generate_data.py         ← cleaning + feature engineering
-├── 02_train_model.py           ← model training + evaluation
-├── reference_data.py           ← district coordinates for map
-├── app.py                      ← Streamlit dashboard
-├── xgb_model.pkl               ← saved XGBoost model
-└── README.md
-```
+## 📁 Repository Guide
+
+Files are grouped here by role — everything still lives in the repo root,
+this is just a map of what's what.
+
+**📂 Data**
+- `raw_final_crop.csv` — original raw government dataset
+- `krishisahayak_dataset.csv` — cleaned, feature-engineered, model-ready data
+
+**🧠 Pipeline Scripts** (run in this order)
+- `01_generate_data.py` — cleaning + feature engineering
+- `01b_eda.py` — exploratory data analysis, summary stats, outlier detection
+- `02_train_model.py` — model training + evaluation
+- `reference_data.py` — district coordinates used by the map
+- `app.py` — Streamlit dashboard
+
+**🤖 Trained Model Artifacts** (produced by `02_train_model.py`)
+- `xgb_model.pkl` — saved XGBoost classifier
+- `label_encoder.pkl` — encodes Low/Medium/High ↔ 0/1/2
+- `feature_list.pkl` — exact feature order the model expects
+
+**📊 EDA Outputs** (produced by `01b_eda.py`)
+- `01_missing_value_map.png`, `02_outlier_boxplots.png`,
+  `03_univariate_distributions.png`, `04_year_trends.png`,
+  `05_yield_by_crop.png`, `06_target_distribution.png`,
+  `07_correlation_heatmap.png`, `08_top_risk_districts.png`
+- `missing_value_report.csv`, `outlier_report.csv`,
+  `summary_statistics.csv`, `variable_description.csv`
+
+**📈 Model Evaluation Outputs** (produced by `02_train_model.py`)
+- `confusion_matrix.png`, `feature_importance.png`
+
+**⚙️ Config**
+- `requirements.txt` — dependencies
+- `README.md` — this file
 
 ---
 
